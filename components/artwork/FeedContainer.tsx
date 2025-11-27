@@ -12,7 +12,7 @@ interface FeedContainerProps {
 }
 
 export function FeedContainer({ artworks, sections }: FeedContainerProps) {
-  const [currentArtworkId, setCurrentArtworkId] = useState<number | undefined>();
+  const [currentArtworkId, setCurrentArtworkId] = useState<string | number | undefined>();
   const searchParams = useSearchParams();
   const targetArtworkId = searchParams.get('artwork');
 
@@ -22,7 +22,7 @@ export function FeedContainer({ artworks, sections }: FeedContainerProps) {
         <InfiniteScrollFeed
           artworks={artworks}
           onCurrentArtworkChange={setCurrentArtworkId}
-          targetArtworkId={targetArtworkId ? parseInt(targetArtworkId) : undefined}
+          targetArtworkId={targetArtworkId ? (isNaN(Number(targetArtworkId)) ? targetArtworkId : parseInt(targetArtworkId)) : undefined}
         />
       </div>
 

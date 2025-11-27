@@ -1,14 +1,27 @@
 export interface Artwork {
-  id: number;
+  id: string | number;
   title: string;
   artist: string;
   year: string;
   medium: string;
-  collection: string;
   description: string;
   imageUrl: string;
-  section: string;
-  url: string;
+
+  // Optional fields for traditional exhibition view
+  collection?: string;
+  section?: string;
+  url?: string;
+
+  // Optional fields for VR exhibition
+  exhibitionId?: string;
+  titleKo?: string;
+  artistKo?: string;
+  descriptionKo?: string;
+  dimensions?: string;
+  audioGuideUrl?: string;
+  audioGuideId?: string;
+  position?: [number, number, number];
+  rotation?: [number, number, number];
 }
 
 export interface Section {
@@ -16,7 +29,7 @@ export interface Section {
   name: string;
   subtitle: string;
   description?: string;
-  artworks: number[];
+  artworks: (string | number)[];
 }
 
 export interface ExhibitionData {

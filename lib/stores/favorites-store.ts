@@ -2,11 +2,11 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 interface FavoritesStore {
-  favorites: number[];
-  addFavorite: (id: number) => void;
-  removeFavorite: (id: number) => void;
-  toggleFavorite: (id: number) => void;
-  isFavorite: (id: number) => boolean;
+  favorites: (string | number)[];
+  addFavorite: (id: string | number) => void;
+  removeFavorite: (id: string | number) => void;
+  toggleFavorite: (id: string | number) => void;
+  isFavorite: (id: string | number) => boolean;
   clearFavorites: () => void;
 }
 

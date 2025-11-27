@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 interface ArtworkGridMenuProps {
   artworks: Artwork[];
   sections: Section[];
-  currentArtworkId?: number;
+  currentArtworkId?: string | number;
 }
 
 export function ArtworkGridMenu({ artworks, sections, currentArtworkId }: ArtworkGridMenuProps) {
@@ -31,7 +31,7 @@ export function ArtworkGridMenu({ artworks, sections, currentArtworkId }: Artwor
     }
   }, [mobileMenuOpen, currentArtworkId]);
 
-  const handleArtworkClick = (artworkId: number) => {
+  const handleArtworkClick = (artworkId: string | number) => {
     // Check if artwork element exists and is loaded
     const artworkElement = document.getElementById(`artwork-${artworkId}`);
 

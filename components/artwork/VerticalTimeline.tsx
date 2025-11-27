@@ -7,13 +7,13 @@ import { Artwork, Section } from '@/types/artwork';
 interface VerticalTimelineProps {
   artworks: Artwork[];
   sections: Section[];
-  currentArtworkId?: number;
+  currentArtworkId?: string | number;
 }
 
 export function VerticalTimeline({ artworks, sections, currentArtworkId }: VerticalTimelineProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const timelineItemRefs = useRef<Map<number, HTMLButtonElement>>(new Map());
+  const timelineItemRefs = useRef<Map<string | number, HTMLButtonElement>>(new Map());
   const router = useRouter();
   const pathname = usePathname();
 
@@ -56,7 +56,7 @@ export function VerticalTimeline({ artworks, sections, currentArtworkId }: Verti
     }
   }, [currentArtworkId, artworks]);
 
-  const scrollToArtwork = (artworkId: number) => {
+  const scrollToArtwork = (artworkId: string | number) => {
     // If we're on the home page, try to scroll directly first
     if (pathname === '/') {
       const artworkElement = document.getElementById(`artwork-${artworkId}`);

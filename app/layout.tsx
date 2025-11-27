@@ -24,6 +24,11 @@ const notoSansKR = Noto_Sans_KR({
 export const metadata: Metadata = {
   title: "Exhibition VR - Digital Twin Virtual Tours",
   description: "Experience art exhibitions in immersive virtual reality through our digital twin technology",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

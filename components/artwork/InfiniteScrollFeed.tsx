@@ -7,8 +7,8 @@ import { useFontSizeStore, getFontSizeClasses } from '@/lib/stores/font-size-sto
 
 interface InfiniteScrollFeedProps {
   artworks: Artwork[];
-  onCurrentArtworkChange?: (artworkId: number) => void;
-  targetArtworkId?: number;
+  onCurrentArtworkChange?: (artworkId: string | number) => void;
+  targetArtworkId?: string | number;
 }
 
 export function InfiniteScrollFeed({ artworks, onCurrentArtworkChange, targetArtworkId }: InfiniteScrollFeedProps) {
@@ -19,7 +19,7 @@ export function InfiniteScrollFeed({ artworks, onCurrentArtworkChange, targetArt
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const loaderRef = useRef<HTMLDivElement>(null);
-  const artworkRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+  const artworkRefs = useRef<Map<string | number, HTMLDivElement>>(new Map());
   const initialLoadRef = useRef(false);
   const hasScrolledToTarget = useRef(false);
 
