@@ -64,6 +64,8 @@ export function ArtworkPost({ artwork }: ArtworkPostProps) {
               alt={artwork.artist}
               fill
               className="object-cover"
+              sizes="40px"
+              quality={75}
               onError={() => setAvatarError(true)}
             />
           </div>
@@ -89,6 +91,9 @@ export function ArtworkPost({ artwork }: ArtworkPostProps) {
           alt={artwork.title}
           fill
           className="object-contain"
+          sizes="(max-width: 640px) 100vw, 640px"
+          quality={80}
+          priority={false}
         />
       </div>
 

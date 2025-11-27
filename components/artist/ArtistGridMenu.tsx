@@ -103,6 +103,7 @@ export function ArtistGridMenu({ artists, currentArtistName }: ArtistGridMenuPro
                         className="object-cover"
                         onError={() => handleAvatarError(artist.name)}
                         sizes="64px"
+                        quality={75}
                       />
                     </div>
                     {/* Name */}

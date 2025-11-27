@@ -125,6 +125,7 @@ export function ArtworkGridMenu({ artworks, sections, currentArtworkId }: Artwor
                           fill
                           className="object-cover"
                           sizes="(max-width: 640px) 20vw, 80px"
+                          quality={70}
                         />
                         {/* Artwork number overlay */}
                         <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">

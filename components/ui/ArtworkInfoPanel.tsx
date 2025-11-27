@@ -57,6 +57,7 @@ export default function ArtworkInfoPanel({
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 448px"
+              quality={85}
             />
           </div>
         )}

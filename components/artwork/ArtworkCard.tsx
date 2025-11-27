@@ -47,6 +47,8 @@ export function ArtworkCard({ artwork, viewMode, linkTo }: ArtworkCardProps) {
             alt={artwork.title}
             fill
             className="object-cover transition-transform group-hover:scale-105"
+            sizes="128px"
+            quality={75}
           />
         </div>
         <div className="flex flex-1 flex-col">
@@ -95,6 +97,8 @@ export function ArtworkCard({ artwork, viewMode, linkTo }: ArtworkCardProps) {
           alt={artwork.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          quality={80}
         />
         <div className="absolute right-2 top-2 flex gap-2">
           <Button

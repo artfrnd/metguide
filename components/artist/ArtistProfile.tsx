@@ -44,6 +44,8 @@ export function ArtistProfile({ artistInfo, artworks }: ArtistProfileProps) {
                   fill
                   className="object-cover"
                   onError={() => setAvatarError(true)}
+                  sizes="(max-width: 640px) 80px, 160px"
+                  quality={85}
                   priority
                 />
               </div>
@@ -117,6 +119,8 @@ export function ArtistProfile({ artistInfo, artworks }: ArtistProfileProps) {
                         alt={relatedArtist}
                         fill
                         className="object-cover"
+                        sizes="64px"
+                        quality={75}
                       />
                     </div>
                     <div className="text-xs text-center text-gray-700 max-w-[80px] truncate" style={{fontFamily: 'var(--font-noto-sans-kr), sans-serif', fontWeight: 500}}>
@@ -152,6 +156,8 @@ export function ArtistProfile({ artistInfo, artworks }: ArtistProfileProps) {
                     alt={artwork.title}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                    quality={80}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <div className="text-white text-center p-2">
