@@ -92,7 +92,7 @@ export function Header() {
                 )}
               </Button>
             </Link>
-            {pathname === '/' && (
+            {(pathname === '/' || pathname?.startsWith('/artists/')) && (
               <Button
                 variant="ghost"
                 size="icon"
