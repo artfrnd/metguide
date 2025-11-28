@@ -123,19 +123,6 @@ export default function AudioPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-3">
-            <Headphones className="w-8 h-8 text-blue-600" />
-            <h1 className={cn("font-bold text-gray-900 dark:text-white", fontClasses.heading1)}>
-              오디오 가이드
-            </h1>
-          </div>
-          <p className={cn("text-gray-600 dark:text-gray-300", fontClasses.body)}>
-            작품에 대한 상세한 설명을 오디오로 들어보세요
-          </p>
-        </div>
-
         {/* YouTube Player */}
         <div className="mb-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mx-auto" style={{ maxWidth: '800px' }}>
           <div className="aspect-video">
@@ -149,11 +136,6 @@ export default function AudioPage() {
               allowFullScreen
               className="w-full h-full"
             />
-          </div>
-          <div className="p-4 bg-gradient-to-r from-blue-600 to-purple-600">
-            <p className="text-white text-sm font-medium">
-              📍 현재 재생: {currentTimestamp} | {currentIndex + 1} / {audioGuideWithImages.length}
-            </p>
           </div>
         </div>
 
@@ -251,44 +233,44 @@ export default function AudioPage() {
       </div>
 
       {/* Bottom Controller */}
-      <div className="fixed bottom-16 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-40">
+      <div className="fixed bottom-16 left-0 right-0 bg-transparent z-40">
         <div className="max-w-screen-xl mx-auto px-4 py-4">
           <div className="flex items-center justify-center gap-8">
             {/* Previous Button */}
             <button
               onClick={handlePrevious}
               disabled={currentIndex === 0}
-              className={`p-4 rounded-full transition-all ${
+              className={`p-3 rounded-full transition-all ${
                 currentIndex === 0
                   ? 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
                   : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
               }`}
               aria-label="이전"
             >
-              <ChevronLeft className="w-6 h-6" strokeWidth={3} />
+              <ChevronLeft className="w-5 h-5" strokeWidth={3} />
             </button>
 
             {/* Play Button */}
             <button
               onClick={handlePlayCurrent}
-              className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+              className="p-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
               aria-label="재생"
             >
-              <Play className="w-8 h-8" fill="white" />
+              <Play className="w-6 h-6" fill="white" />
             </button>
 
             {/* Next Button */}
             <button
               onClick={handleNext}
               disabled={currentIndex === audioGuideWithImages.length - 1}
-              className={`p-4 rounded-full transition-all ${
+              className={`p-3 rounded-full transition-all ${
                 currentIndex === audioGuideWithImages.length - 1
                   ? 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
                   : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
               }`}
               aria-label="다음"
             >
-              <ChevronRight className="w-6 h-6" strokeWidth={3} />
+              <ChevronRight className="w-5 h-5" strokeWidth={3} />
             </button>
           </div>
         </div>
